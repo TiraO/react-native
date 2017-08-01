@@ -176,6 +176,7 @@ function link(args: Array<string>, config: RNConfig) {
   return promiseWaterfall(tasks).catch(err => {
     log.error(
       `Something went wrong while linking. Error: ${err.message} \n` +
+      `Stack: ${err.stack} \n` +
       'Please file an issue here: https://github.com/facebook/react-native/issues'
     );
     throw err;
